@@ -19,7 +19,7 @@
 .container {
     max-width: 1440px;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
     padding: 40px;
     font-weight: 400;
 }
@@ -44,6 +44,15 @@ nav a:hover {
 
 nav a:last-child {
     margin-right: 0;
+}
+
+.icon-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.backdrop {
+    display: none;
 }
 
 /* HERO SECTION */
@@ -149,4 +158,164 @@ nav a:last-child {
 
 .hero-img img {
     width: 100%;
+}
+
+.second-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-section .popular {
+    display: flex;
+    margin-right: 50px;
+}
+
+.popular:last-child {
+    margin: 0;
+}
+
+.popular img {
+    height: 110px;
+    margin-right: 15px;
+}
+
+.popular .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popular .content span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--grayish-blue);
+}
+
+.popular .content h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.popular .content h3:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+}
+
+.popular .content p {
+    font-size: 14px;
+    color: var(--dark-grayish-blue);
+    line-height: 1.5;
+}
+
+
+/* Mobile design */
+@media screen and (max-width: 376px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    nav .links {
+        position: fixed;
+        width: 200px;
+        background: var(--off-white);
+        top: 0;
+        right: -200px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 200px;
+        padding-left: 30px;
+        z-index: 99;
+        transition: all 650ms ease-in-out;
+    }
+
+    nav .links.active {
+        right: 0;
+    }
+
+    nav .links a {
+        margin-bottom: 30px;
+    }
+
+    .menu-open {
+        display: inline-block;
+        transition: all 650ms ease-in-out;
+    }
+
+    .menu-open.active {
+        display: none;
+    }
+
+    .menu-close {
+        display: none;
+        transition: all 650ms ease-in-out;
+    }
+
+    .menu-close.active {
+        display: inline-block;
+        z-index: 100;
+    }
+    
+    .backdrop {
+        display: none;
+        position: fixed;
+        background: black;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        z-index: 98;
+        transition: all 650ms ease-in-out;
+    }
+
+    .backdrop.active {
+        display: block;
+    }
+
+    /* Hero */
+    .first-section {
+        grid-template-areas: 
+        "hero-img"
+        "intro"
+        "news"
+        ;
+    }
+
+    .image-web-3-mobile {
+        display: block;
+    }
+
+    .image-web-3-desktop {
+        display: none;
+    }
+
+    .second-section {
+        flex-direction: column;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro h1 {
+        font-size: 40px;
+        margin-bottom: 15px;;
+    }
+
+    .intro .description {
+        line-height: 1.6;
+    }
+
+    .popular {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .popular h3 {
+        margin: 5px 0;
+    }
+
+    
 }
